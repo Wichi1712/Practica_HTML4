@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Lista1</title>
+    
+    <style>
+    .listaBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .listaBtn:hover, .listaBtn:focus {
+    background-color: #3e8e41;
+    }
+
+    .listaDesplegable {
+    position: relative;
+    display: inline-block;
+    }
+
+    .listaDesplegable-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .listaDesplegable-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+
+    .listaDesplegable-content a:hover {background-color: #f1f1f1}
+    
+    .mostrar{display: block;}
+</style>
+</head>
+
+<body>
+    <h1>Esta es la pagina Lista 1</h1>
+    <button id="btnAnterior">
+        <a href="index.html">Volver a pagina principal</a>
+    </button>
+    
+    <div class="listaDesplegable">
+        <button id="miBtn" class="listaBtn">Lista desplegable</button>
+        <div id="miLista" class="listaDesplegable-content">
+            <a href="#Opcion1">Opcion 1</a>
+            <a href="#Opcion2">Opcion 2</a>
+            <a href="#Opcion3">Opcion 3</a>
+        </div>
+    </div>
+    
+    
+    <script>
+        document.getElementById("btnAnterior").addEventListener("click", anterior);
+    
+        function anterior(){
+            alert("Estas a punto de volver a la pagina principal");
+        }
+        
+        document.getElementById("miBtn").onclick = function() {desplegarLista()};
+        function desplegarLista(){
+            document.getElementById("miLista").classList.toggle("mostrar");
+        }
+    
+    </script>
+
+</body>
+    
+
+</html>
